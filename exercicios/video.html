@@ -1,24 +1,37 @@
-<video id="myVideo" width="600" height="450"controlsList="nodownload">
-    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
-    Video nao suportado no browser atual
-</video>
-
-<div progress="myVideo" class="progress">
-    <div></div>
-</div>
-
-<div id="buttons">
-    <button play onclick="playVideo()">Play</button>
-    <button pause onclick="pauseVideo()">Pause</button>
+<div class="main">
+    <video id="myVideo" width="600" height="450"controlsList="nodownload">
+        <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Video nao suportado no browser atual
+    </video>
+    
+    <div progress="myVideo" class="progress">
+        <div></div>
+    </div>
+    
+    <div id="buttons">
+        <button play onclick="playVideo()">Play</button>
+        <button pause onclick="pauseVideo()">Pause</button>
+    </div>
 </div>
 <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .main{
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
     .progress{
         box-sizing: border-box;
         width: 600px;
         height: 40px;
         background-color: grey;
         border: solid 1px black;
-        margin: 20px 0;
+        margin: 0px auto;
     }
     .progress > div{
         background-color: rgba(155, 6, 6, 0.336);
@@ -32,6 +45,7 @@
         width: 600px;
         display: flex;
         justify-content: space-between;
+        margin: 20 auto;
     }
     button{
         padding: 10px;
@@ -47,7 +61,7 @@ let video = document.querySelector('video')
 const playButton = document.querySelector('[play]').onclick = e => video.play()
 const pauseButton = document.querySelector('[pause]').onclick = e => video.pause()
 setInterval(() => {
-    let progress = Math.floor((Math.floor(video.currentTime) * 100) / 44)
+    let progress = Math.floor((Math.floor(video.currentTime) * 100) / video.duration)
     let progressBar = document.querySelector('.progress > div').style.width = `${progress}%`
 }, 1000)
 </script>
