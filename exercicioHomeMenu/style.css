@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Manrope:wght@400;700&family=Poppins:wght@300;400;500&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    justify-content: space-between;
+    border-bottom: 4px solid rgba(184, 39, 39, 0.829);
+    background-color: rgba(0, 0, 0, 0.904);
+}
+header ul{
+    display: flex;
+    gap: 26px;
+    padding: 26px;
+    height: 100%;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    color: white;
+}
+header ul li .destaque{
+    padding: 12px;
+    background-color: rgba(219, 13, 13, 0.945);
+    border-radius: 8px;
+}
+header ul .borderRight:hover{
+    border-right: 2px solid rgba(184, 39, 39, 0.521);
+}
+header ul li .destaque:hover{
+    transition: 0.1s;
+    background-color: rgba(228, 57, 57, 0.781);;
+    }
+.menu-toggle{
+    color: white;
+    font-size: 42px;
+    display: none;
+}
+@media (max-width: 730px){
+#login{
+    display: none;
+}
+}
+@media (max-width: 530px){
+    #menu{
+        display: none;
+    }
+    .menu-toggle{
+        display: initial;
+    }
+    }
