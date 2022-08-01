@@ -1,0 +1,53 @@
+<video id="myVideo" width="600" height="450"controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Video nao suportado no browser atual
+</video>
+
+<div progress="myVideo" class="progress">
+    <div></div>
+</div>
+
+<div id="buttons">
+    <button play onclick="playVideo()">Play</button>
+    <button pause onclick="pauseVideo()">Pause</button>
+</div>
+<style>
+    .progress{
+        box-sizing: border-box;
+        width: 600px;
+        height: 40px;
+        background-color: grey;
+        border: solid 1px black;
+        margin: 20px 0;
+    }
+    .progress > div{
+        background-color: rgba(155, 6, 6, 0.336);
+        color: white;
+        text-align: right;
+        font-size: 14px;
+        height: 100%;
+        width: 0%;
+    }
+    #buttons{
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+    }
+    button{
+        padding: 10px;
+        width: 100px;
+        border-radius: 8px;
+        border: none;
+        background-color: rgb(95, 91, 91);
+
+    }
+</style>
+<script>
+let video = document.querySelector('video')
+const playButton = document.querySelector('[play]').onclick = e => video.play()
+const pauseButton = document.querySelector('[pause]').onclick = e => video.pause()
+setInterval(() => {
+    let progress = Math.floor((Math.floor(video.currentTime) * 100) / 44)
+    let progressBar = document.querySelector('.progress > div').style.width = `${progress}%`
+}, 1000)
+</script>
